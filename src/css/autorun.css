@@ -1,23 +1,27 @@
 .gsp-toggle-btn {
-    width: 200px;
-    height: 25px;
+  width: 200px;
+  height: 25px;
 
-    padding: 3px 10px;
-    margin: 20px 0px;
-    margin-right: 10px; 
+  padding: 3px 10px;
+  margin: 20px 0px;
+  margin-right: 10px;
 
-    color: white;
+  color: white;
 
-    border-radius: 3px;
+  border-radius: 3px;
 
-    background-color: gray;
-    box-shadow: 0 8px 6px -6px black;
+  background-color: gray;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .gsp-toggle-btn:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .textFileRow--code {
-    padding: 0 !important
+  padding: 0 !important;
+}
+
+.hljs-keyword {
+  font-weight: bold;
 }
