@@ -1,21 +1,74 @@
-.gsp-toggle-btn {
-  width: 200px;
-  height: 25px;
+.gsh-details-container {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: .5em .5em 0;
 
-  padding: 3px 10px;
-  margin: 20px 0px;
-  margin-right: 10px;
-
-  color: white;
-
-  border-radius: 3px;
-
-  background-color: gray;
-  box-shadow: 0 8px 6px -6px black;
+  margin-bottom: 16px;
+}
+.gsh-details-container[open] {
+  padding: .5em;
+}
+.gsh-details-container[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em;
 }
 
-.gsp-toggle-btn:active {
-  box-shadow: none;
+.gsh-details-summary {
+  margin: -.5em -.5em 0;
+  padding: .5em;
+}
+
+
+
+#gsh-language-select {
+  width: 15em;
+
+  padding: 2px;
+
+  border: 2px solid #e4e7e7;
+  border-radius: 2px;
+}
+
+#gsh-language-select:focus {
+  border-color: #5ba4a1;
+}
+
+.gsh-highlight-button {
+  display: block;
+
+  width: fit-content;
+
+  padding: 6px 12px;
+  margin: 5px 0px;
+
+  border-radius: 24px;
+
+  text-align: center;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #1b807c;
+
+  color: #1b807c;
+  background-color: white;
+
+  transition: background-color linear 0.2s, border-color linear 0.2s, color linear 0.2s
+}
+
+.gsh-highlight-button:hover, .gsh-highlight-button:active  {
+  border-color: #1b807c;
+  background-color: #1b807c;
+  color: white;
+}
+
+.gsh-error-area {
+  background-color: #ffeeee;
+  padding: 6px;
+  border: solid 1px red;
+  border-radius: 5px;
+}
+.gsh-error-area:empty {
+  display: none;
 }
 
 .textFileRow--code {
