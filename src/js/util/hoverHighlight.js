@@ -13,13 +13,11 @@ document.head.appendChild(styleTag);
  */
 export function disableHoverHighlight() {
     styleTag.innerText = disableLineHighlightStyles;
-    document.getElementById("toggle-hover-highlight").checked = false;
 }
 /**
  * Enables line highlighting on hover in code blocks
  */
 export function enableHoverHighlight() {
     styleTag.innerText = "";
-    document.getElementById("toggle-hover-highlight").checked = true;
 }
 

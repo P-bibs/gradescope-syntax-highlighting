@@ -1,9 +1,10 @@
 import "../css/autorun.css";
 import hljs from 'highlight.js';
+import { disableHoverHighlight, enableHoverHighlight } from "./util/hoverHighlight";
+import { disableDarkMode, enableDarkMode } from "./util/themes";
+import pyretSyntax from './pyret-mode';
 
 // Register languages
-import pyretSyntax from './pyret-mode';
-import { disableHoverHighlight, enableHoverHighlight } from "./util/hoverHighlight";
 hljs.registerLanguage('pyret', pyretSyntax);
 
 // Register aliases
@@ -29,7 +30,6 @@ function init() {
 
     // Insert plugin html into document
     let pluginHtml = `
-    ${styleSheets.map(s => `<link rel="stylesheet" href="${s}">`).join("\n")}
     <details class="gsh-details-container">
         <summary class="gsh-details-summary">Syntax Highlighting</summary>
         <datalist id="gsh-language-list">
@@ -45,6 +45,9 @@ function init() {
             <div class="gsh-error-area"></div>
             <input type="checkbox" id="toggle-hover-highlight" class="gsh-checkbox">
             <label for="toggle-hover-highlight">Disable highlight-on-hover for code lines</label>
+            <br>
+            <input type="checkbox" id="toggle-dark-mode" class="gsh-checkbox">
+            <label for="toggle-dark-mode">Dark mode</label>
         </div>
     </details>
     `
@@ -58,6 +61,14 @@ function init() {
             disableHoverHighlight();
         } else {
             enableHoverHighlight();
+        }
+    }
+
+    document.getElementById("toggle-dark-mode").onchange = function () {
+        if (document.getElementById("toggle-dark-mode").checked) {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
         }
     }
 }
