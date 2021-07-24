@@ -21,6 +21,6 @@
     "write-file-webpack-plugin": "4.5.1"
   },
   "dependencies": {
-    "highlight.js": "^10.2.1"
+    "highlight.js": "^11.1.0"
   }
 }
