@@ -13,18 +13,21 @@ reanalyzeButton.onclick = enableSyntax;
 
 function enableSyntax() {
 
-    console.log("enabling syntax")
-    let codeContainer
-    try {
-        codeContainer = document.getElementsByTagName("code")[0]
-    } catch (error) {
-        console.log("Couldn't find any code elements")
+    let codeContainers;
+    let codeContainers = document.getElementsByTagName("code");
+    if (codeContainers.length === 0) {
+        console.error("Tried to perform syntax highlighting, but couldn't find any code blocks")
     }
 
-    let codeLines = codeContainer.getElementsByClassName("textFileRow--code");
-
-    for (let codeLine of codeLines) {
-        codeLine.innerHTML = codeLine.innerText;
-        hljs.highlightBlock(codeLine);
+    // Highlight each line in each code block
+    for (const codeContainer in codeContainers) {
+        let codeLines = codeContainer.getElementsByClassName("textFileRow--code");
+        for (const codeLine of codeLines) {
+            // For this line of code, delete all the spans by replacing the line's HTML content with it's plaintext content
+            codeLine.replaceChildren(document.createTextNode(codeLine.innerText));
+    
+            // Highlight the (not plaintext) line
+            hljs.highlightBlock(codeLine);
+        }
     }
 }
