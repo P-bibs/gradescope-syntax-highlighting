@@ -13,14 +13,13 @@ reanalyzeButton.onclick = enableSyntax;
 
 function enableSyntax() {
 
-    let codeContainers;
-    let codeContainers = document.getElementsByTagName("code");
+    const codeContainers = document.getElementsByTagName("code");
     if (codeContainers.length === 0) {
         console.error("Tried to perform syntax highlighting, but couldn't find any code blocks")
     }
 
     // Highlight each line in each code block
-    for (const codeContainer in codeContainers) {
+    for (const codeContainer of codeContainers) {
         let codeLines = codeContainer.getElementsByClassName("textFileRow--code");
         for (const codeLine of codeLines) {
             // For this line of code, delete all the spans by replacing the line's HTML content with it's plaintext content
