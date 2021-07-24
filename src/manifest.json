@@ -1,5 +1,6 @@
 {
-  "name": "Gradescope Syntax Pyret",
+  "name": "Gradescope Syntax Highlighting",
+  "version": "1.0.0",
   "options_page": "options.html",
   "background": {
     "page": "background.html"
